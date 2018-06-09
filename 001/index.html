@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
   <!-- Required meta tags -->
@@ -18,15 +18,89 @@
 </head>
 
 <body>
-  <section class="container-fluid">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1505481354248-2ba5d3b9338e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bdf10e1615dc7c122da9b74cd9cfcc0f&auto=format&fit=crop&w=800&q=60"
-        alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">
-          <i class="fas fa-arrow-alt-circle-right"></i> Go somewhere</a>
+  <section class="main">
+    <div class="header d-flex flex-column align-items-end">
+      <div class="h2 mt-auto">待辦事項</div>
+      <p class="mb-1">Nov 27, 2018</p>
+    </div>
+    <!-- 新增事件 -->
+    <div class="addArea">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="input-group my-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-addNew" type="button">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <input type="text" class="form-control border-0" placeholder="請在此輸入待辦事項" aria-label="" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 事件列表 -->
+    <div class="listArea pb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- 事件 -->
+            <div class="card border-0 mb-3">
+              <div class="card-body pl-1 pr-3 d-flex">
+                <div class="dragger ml-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="7" cx="14" r="1" fill="#999"></circle>
+                    <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
+                    <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="18" cx="14" r="1" fill="#999"></circle>
+                  </svg>
+                </div>
+                <button type="button" id="complete" class="btn btn-outline-check">
+                  <i class="fas fa-check"></i>
+                </button>
+                <div class="listMain ml-2">體驗4D侏羅紀世界</div>
+                <div class="actions ml-auto">
+                  <a href="#" class="btn btn-edit">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
+                  <a href="#" class="btn btn-delete">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 事件 -->
+            <div class="card border-0 mb-3">
+              <div class="card-body pl-1 pr-3 d-flex">
+                <div class="dragger ml-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="7" cx="14" r="1" fill="#999"></circle>
+                    <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
+                    <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
+                    <circle cy="18" cx="14" r="1" fill="#999"></circle>
+                  </svg>
+                </div>
+                <button type="button" id="complete" class="btn btn-outline-check">
+                  <i class="fas fa-check"></i>
+                </button>
+                <div class="listMain ml-2">整理房間</div>
+                <div class="actions ml-auto">
+                  <a href="#" class="btn btn-edit">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
+                  <a href="#" class="btn btn-delete">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

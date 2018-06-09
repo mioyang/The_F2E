@@ -1,0 +1,92 @@
+body {
+    font-size: 16px;
+    font-family: 'Segoe UI',SegoeUI,'Microsoft JhengHei',微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #666;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 320px;
+}
+.main {
+    width: 480px;
+    padding: 0;
+    margin: 50px auto;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+}
+/***header***/
+.header {
+    height: 120px;
+    padding: 15px;
+    color: #fff;
+    border-bottom: 1px solid #e3e3e4;
+    background: url(https://images.unsplash.com/photo-1506472634167-c6776cd44d07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5fb9753f63d5435c78a3016dc36683e&auto=format&fit=crop&w=800&q=60);
+    background-size: cover;
+    background-position: center center;
+}
+/***header enda***/
+
+/***新增input***/
+.addArea .input-group {
+    background: rgba(227, 227, 228, 0.75);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.addArea .input-group>.input-group-prepend>.btn {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.addArea .form-control {
+    background: transparent;
+}
+.btn-addNew {
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #FDC830;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/***新增input ends***/
+
+/***事件列表***/
+.listArea .card {
+    color: #444;
+    box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+}
+.listArea .btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+}
+.listArea .fas {
+    font-size: 14px;
+}
+.listArea .btn-outline-check {
+    background: #fff;
+    border: 1px solid #F37335;
+    color: #F37335;
+}
+.listArea .btn-outline-check:hover,
+.listArea button.checked {
+    background: #F37335;
+    border: 1px solid #F37335;
+    color: #fff;
+}
+.listArea .btn-edit, .listArea .btn-delete {
+    background:transparent;
+    color:#666;
+}
+.listArea .btn-edit:hover {
+    color:#25b99a;
+}
+.listArea .btn-delete:hover {
+    background:transparent;
+    color:#e85656;
+}
+
+/***事件列表 ends***/
