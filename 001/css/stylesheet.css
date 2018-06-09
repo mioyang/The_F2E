@@ -11,23 +11,25 @@ body {
     width: 480px;
     padding: 0;
     margin: 50px auto;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.18);
 }
+
+
 /***header***/
 .header {
-    height: 120px;
+    height: 240px;
     padding: 15px;
     color: #fff;
     border-bottom: 1px solid #e3e3e4;
-    background: url(https://images.unsplash.com/photo-1506472634167-c6776cd44d07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5fb9753f63d5435c78a3016dc36683e&auto=format&fit=crop&w=800&q=60);
+    background: url(https://images.unsplash.com/photo-1518467166778-b88f373ffec7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fc36d68d6a46de388290adee9eecb950&auto=format&fit=crop&w=1789&q=80);
     background-size: cover;
-    background-position: center center;
+    background-position: left center;
 }
 /***header enda***/
 
 /***新增input***/
 .addArea .input-group {
-    background: rgba(227, 227, 228, 0.75);
+    background: rgba(227, 227, 228, 0.5);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 }
@@ -46,15 +48,14 @@ body {
     height: 50px;
     border-radius: 50%;
     border: none;
-    background: #FDC830;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #0199c5; 
 }
 /***新增input ends***/
 
 /***事件列表***/
 .listArea .card {
     color: #444;
+    overflow: hidden;
     box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
 }
 .listArea .btn {
@@ -68,25 +69,89 @@ body {
 }
 .listArea .btn-outline-check {
     background: #fff;
-    border: 1px solid #F37335;
-    color: #F37335;
-}
-.listArea .btn-outline-check:hover,
-.listArea button.checked {
-    background: #F37335;
-    border: 1px solid #F37335;
+    border: 1px solid #0199c5;
     color: #fff;
+    opacity: 0.75;
+}
+.listArea .btn-outline-check:hover {
+    border-width: 2px;
+    opacity: 1;
+}
+.listArea button.checked {
+    background: #0199c5;
+    border: 1px solid #0199c5;
+    color: #fff;
+    opacity: 1;
 }
 .listArea .btn-edit, .listArea .btn-delete {
     background:transparent;
     color:#666;
 }
 .listArea .btn-edit:hover {
-    color:#25b99a;
+    color:#0199c5;
 }
 .listArea .btn-delete:hover {
     background:transparent;
     color:#e85656;
 }
-
+.listArea .actions {
+    position: relative;
+    right: -85px;
+    opacity: 0;
+    z-index: 10;
+    -webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.listArea .card:hover .actions {
+    right: 0;
+    opacity: 1;
+}
 /***事件列表 ends***/
+
+/***拖拉按鈕***/
+.listArea .dragger{
+    color: #ccc;
+    font-size: 11px;
+    opacity: 0;
+    cursor:move;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.listArea.dragger span:first-child{
+    position:relative;
+    left:5px;
+}
+.listArea .card:hover .dragger{
+    opacity: 1;
+}
+/***拖拉按鈕 ends***/
+
+
+
+
+/***Extra small devices (portrait phones, less than 576px)***/
+    @media (max-width: 320px) {
+        .main {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+/***Small devices (landscape phones, 576px and up)***/
+    @media (min-width: 576px) and (max-width: 767px) {
+        .main {
+            width: 480px;
+            padding: 0;
+        }
+    }

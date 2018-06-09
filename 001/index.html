@@ -19,9 +19,9 @@
 
 <body>
   <section class="main">
-    <div class="header d-flex flex-column align-items-end">
+    <div class="header d-flex flex-column align-items-start">
       <div class="h2 mt-auto">待辦事項</div>
-      <p class="mb-1">Nov 27, 2018</p>
+      <p class="mb-1 date">Nov 27, 2018</p>
     </div>
     <!-- 新增事件 -->
     <div class="addArea">
@@ -30,11 +30,11 @@
           <div class="col-12">
             <div class="input-group my-3">
               <div class="input-group-prepend">
-                <button class="btn btn-addNew" type="button">
+                <button class="btn btn-addNew" id="addNew" type="button">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
-              <input type="text" class="form-control border-0" placeholder="請在此輸入待辦事項" aria-label="" aria-describedby="basic-addon1">
+              <input type="text" id="event" class="form-control border-0" placeholder="輸入待辦事項...">
             </div>
           </div>
         </div>
@@ -45,57 +45,59 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <!-- 事件 -->
-            <div class="card border-0 mb-3">
-              <div class="card-body pl-1 pr-3 d-flex">
-                <div class="dragger ml-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="7" cx="14" r="1" fill="#999"></circle>
-                    <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
-                    <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="18" cx="14" r="1" fill="#999"></circle>
-                  </svg>
-                </div>
-                <button type="button" id="complete" class="btn btn-outline-check">
-                  <i class="fas fa-check"></i>
-                </button>
-                <div class="listMain ml-2">體驗4D侏羅紀世界</div>
-                <div class="actions ml-auto">
-                  <a href="#" class="btn btn-edit">
-                    <i class="fas fa-pencil-alt"></i>
-                  </a>
-                  <a href="#" class="btn btn-delete">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
+            <div id="listMain">
+              <!-- 事件 -->
+              <div class="card border-0 mb-3">
+                <div class="card-body pl-1 pr-3 d-flex align-items-center">
+                  <div class="dragger mr-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                      <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="7" cx="14" r="1" fill="#999"></circle>
+                      <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
+                      <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="18" cx="14" r="1" fill="#999"></circle>
+                    </svg>
+                  </div>
+                  <button type="button" id="complete" class="btn btn-outline-check checked">
+                    <i class="fas fa-check"></i>
+                  </button>
+                  <div class="listContent ml-2">體驗4D侏羅紀世界</div>
+                  <div class="actions ml-auto">
+                    <a href="#" class="btn btn-edit">
+                      <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a href="#" class="btn btn-delete">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- 事件 -->
-            <div class="card border-0 mb-3">
-              <div class="card-body pl-1 pr-3 d-flex">
-                <div class="dragger ml-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="7" cx="14" r="1" fill="#999"></circle>
-                    <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
-                    <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
-                    <circle cy="18" cx="14" r="1" fill="#999"></circle>
-                  </svg>
-                </div>
-                <button type="button" id="complete" class="btn btn-outline-check">
-                  <i class="fas fa-check"></i>
-                </button>
-                <div class="listMain ml-2">整理房間</div>
-                <div class="actions ml-auto">
-                  <a href="#" class="btn btn-edit">
-                    <i class="fas fa-pencil-alt"></i>
-                  </a>
-                  <a href="#" class="btn btn-delete">
-                    <i class="fas fa-trash-alt"></i>
-                  </a>
+              <!-- 事件 -->
+              <div class="card border-0 mb-3">
+                <div class="card-body pl-1 pr-3 d-flex align-items-center">
+                  <div class="dragger mr-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                      <circle cy="7" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="7" cx="14" r="1" fill="#999"></circle>
+                      <circle cy="12.5" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="12.5" cx="14" r="1" fill="#999"></circle>
+                      <circle cy="18" cx="9.5" r="1" fill="#999"></circle>
+                      <circle cy="18" cx="14" r="1" fill="#999"></circle>
+                    </svg>
+                  </div>
+                  <button type="button" id="complete" class="btn btn-outline-check">
+                    <i class="fas fa-check"></i>
+                  </button>
+                  <div class="listContent ml-2">整理房間</div>
+                  <div class="actions ml-auto">
+                    <a href="#" class="btn btn-edit">
+                      <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a href="#" class="btn btn-delete">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -112,6 +114,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
+  <!-- Sortable v1.6.1/ -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
   <!-- Custom JS -->
   <script src="js/main.js"></script>
 </body>
