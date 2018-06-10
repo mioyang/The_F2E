@@ -48,7 +48,7 @@ body {
     height: 50px;
     border-radius: 50%;
     border: none;
-    background: #0199c5; 
+    background: #00c6ff; 
 }
 /***新增input ends***/
 
@@ -67,19 +67,24 @@ body {
 .listArea .fas {
     font-size: 14px;
 }
+
 .listArea .btn-outline-check {
     background: #fff;
-    border: 1px solid #0199c5;
+    border: 1px solid #444;
     color: #fff;
     opacity: 0.75;
 }
+.listArea .btn-outline-check .fa-check {
+    color: #fff;
+}
 .listArea .btn-outline-check:hover {
     border-width: 2px;
+    border-color:#0199c5; 
     opacity: 1;
 }
-.listArea button.checked {
-    background: #0199c5;
-    border: 1px solid #0199c5;
+.listArea .btn-outline-check.checked {
+    background: #00c6ff;
+    border: 1px solid #00c6ff;
     color: #fff;
     opacity: 1;
 }
@@ -88,7 +93,7 @@ body {
     color:#666;
 }
 .listArea .btn-edit:hover {
-    color:#0199c5;
+    color:#45B649;
 }
 .listArea .btn-delete:hover {
     background:transparent;
@@ -103,9 +108,21 @@ body {
 	-moz-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 }
+
 .listArea .card:hover .actions {
     right: 0;
     opacity: 1;
+}
+.listContent p {
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.35s ease-in-out;
+}
+.listContent p.line-through {
+    color: #b3b3b3;
+    text-decoration: line-through;
+    font-style: italic;
+    -webkit-transform: translateX(7px);
 }
 /***事件列表 ends***/
 
@@ -131,12 +148,31 @@ body {
 
 
 
+
+/***Small devices (landscape phones, 576px and up)***/
+    @media (min-width: 576px) and (max-width: 767px) {
+        .main {
+            width: 480px;
+            padding: 0;
+        }
+        .listArea .actions,
+        .listArea .card:hover .actions {
+            right: 0;
+            opacity: 1;
+        }
+    }
+
 /***Extra small devices (portrait phones, less than 576px)***/
     @media (max-width: 320px) {
         .main {
             width: 100vw;
             padding: 0;
             margin: 0;
+        }
+        .listArea .actions,
+        .listArea .card:hover .actions {
+            right: 0;
+            opacity: 1;
         }
     }
 
@@ -146,12 +182,9 @@ body {
             padding: 0;
             margin: 0;
         }
-    }
-
-/***Small devices (landscape phones, 576px and up)***/
-    @media (min-width: 576px) and (max-width: 767px) {
-        .main {
-            width: 480px;
-            padding: 0;
+        .listArea .actions,
+        .listArea .card:hover .actions {
+            right: 0;
+            opacity: 1;
         }
     }
