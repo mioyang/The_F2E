@@ -67,7 +67,9 @@ body {
 .listArea .fas {
     font-size: 14px;
 }
-
+.listArea .listContent {
+    max-width: 280px;
+}
 .listArea .btn-outline-check {
     background: #fff;
     border: 1px solid #444;
@@ -91,6 +93,9 @@ body {
 .listArea .btn-edit, .listArea .btn-delete {
     background:transparent;
     color:#666;
+}
+.listArea .btn-edit {
+    display: none;
 }
 .listArea .btn-edit:hover {
     color:#45B649;
@@ -160,6 +165,9 @@ body {
             right: 0;
             opacity: 1;
         }
+        .listArea .listContent {
+            max-width: 160px;
+        }
     }
 
 /***Extra small devices (portrait phones, less than 576px)***/
@@ -174,6 +182,9 @@ body {
             right: 0;
             opacity: 1;
         }
+        .listArea .listContent {
+            max-width: 120px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -186,5 +197,8 @@ body {
         .listArea .card:hover .actions {
             right: 0;
             opacity: 1;
+        }
+        .listArea .listContent {
+            max-width: 160px;
         }
     }

@@ -97,9 +97,12 @@ $(document).ready(function () {
         // $('a.btn-edit').toggleClass('hidden');
     });
 
-    $('body').on('click', '.fa-pencil', function () {
-        var current = $(this).parent().parent().find('span').text();
-        $(this).parent().parent().find('input[type=text]').val(current).show().select();
+    // 編輯已輸入的事件
+    $('.btn-edit').on('click', function () {
+
+        let index_click = $('a.btn-edit').index(this);
+        var current = $('.card-body .listContent').eq(index_click).find('p').text();
+        console.log(current);
     });
     return false;
 });
