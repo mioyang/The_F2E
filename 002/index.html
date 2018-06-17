@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>F2E-Challenge-002.Filter</title>
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <!-- Aos CSS -->
+  <link rel="stylesheet" href="stylesheets/aos.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="stylesheets/all.css">
+</head>
+
+<body>
+  <!-- 廣告圖 -->
+  <div class="jumbotron jumbotron-fluid text-center text-white">
+    <div class="container">
+      <h1 class="display-4">安安</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+  <!-- 搜尋欄 -->
+  <section class="searchArea mx-auto p-3">
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <label class="sr-only" for="searchEmail">Email</label>
+            <input type="email" class="form-control" placeholder="請輸入email查詢作品">
+          </div>
+          <div class="col">
+            <select class="custom-select" id="searchWeek">
+              <option selected>選擇關卡...</option>
+              <option value="1">week1.待辦清單</option>
+              <option value="2">week2.篩選器</option>
+            </select>
+          </div>
+          <a href="#" class="btn btn-primary">搜尋</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Main Area -->
+  <section class="warp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="sticky-top pt-4">
+            <form>
+              <div class="form-group mb-5">
+                <label for="weekSelect">選擇關卡</label>
+                <select class="form-control" id="weekSelect">
+                  <option>week1.待辦清單</option>
+                  <option>week2.篩選器</option>
+                </select>
+              </div>
+              <div class="form-group skill-group mb-3">
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck1">
+                  <label class="form-check-label" for="skillCheck1">
+                    全部
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck2">
+                  <label class="form-check-label" for="skillCheck2">
+                    html preprocessor
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck3">
+                  <label class="form-check-label" for="skillCheck3">
+                    ES6
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck4">
+                  <label class="form-check-label" for="skillCheck4">
+                    JavaScript API
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck5">
+                  <label class="form-check-label" for="skillCheck5">
+                    AJAX
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck6">
+                  <label class="form-check-label" for="skillCheck6">
+                    JavaScript Design Pattern
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck7">
+                  <label class="form-check-label" for="skillCheck7">
+                    React
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck8">
+                  <label class="form-check-label" for="skillCheck8">
+                    Vue
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck9">
+                  <label class="form-check-label" for="skillCheck9">
+                    Angular
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck10">
+                  <label class="form-check-label" for="skillCheck10">
+                    jQuery
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck11">
+                  <label class="form-check-label" for="skillCheck11">
+                    web layout
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck12">
+                  <label class="form-check-label" for="skillCheck12">
+                    Flexbox
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck13">
+                  <label class="form-check-label" for="skillCheck13">
+                    CSS Grid
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck14">
+                  <label class="form-check-label" for="skillCheck14">
+                    CSS Animation
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck15">
+                  <label class="form-check-label" for="skillCheck15">
+                    CSS preprocessor
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck16">
+                  <label class="form-check-label" for="skillCheck16">
+                    CSS Framework
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck17">
+                  <label class="form-check-label" for="skillCheck17">
+                    Responsive Web Design
+                  </label>
+                </div>
+                <div class="form-check my-1">
+                  <input class="form-check-input" type="checkbox" id="skillCheck18">
+                  <label class="form-check-label" for="skillCheck18">
+                    JavaScript
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card my-3 " data-aos="fade-up">
+                <div class="card-body">
+                  <h4 class="card-title">挑戰關卡：Filter 篩選器</h4>
+                  <p class="card-text">
+                    <i class="fas fa-calendar-alt"></i> 繳交日期：2018/06/06 04:38 PM</p>
+                  <div class="badges">
+                    <span class="badge badge-pill badge-secondary">UI</span>
+                    <span class="badge badge-pill badge-secondary">CSS web layout</span>
+                    <span class="badge badge-pill badge-secondary">CSS Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="javascripts/vendor.js"></script>
+  <script src="javascripts/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
