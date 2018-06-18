@@ -9,8 +9,6 @@
   <!-- Fontawesome CSS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
-  <!-- Aos CSS -->
-  <link rel="stylesheet" href="stylesheets/aos.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="stylesheets/all.css">
 </head>
@@ -19,8 +17,8 @@
   <!-- 廣告圖 -->
   <div class="jumbotron jumbotron-fluid text-center text-white">
     <div class="container">
-      <h1 class="display-4">安安</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <h1 class="display-4 mb-3" data-aos="zoom-in">The F2E</h1>
+      <h2 class="display-4" data-aos="zoom-in" data-aos-delay="500">前端修練精神時光屋</h2>
     </div>
   </div>
   <!-- 搜尋欄 -->
@@ -32,7 +30,7 @@
             <label class="sr-only" for="searchEmail">Email</label>
             <input type="email" class="form-control" placeholder="請輸入email查詢作品">
           </div>
-          <div class="col">
+          <div class="col invisible-xs">
             <select class="custom-select" id="searchWeek">
               <option selected>選擇關卡...</option>
               <option value="1">week1.待辦清單</option>
@@ -315,6 +313,31 @@
               </div>
             </div>
           </div>
+          <nav aria-label="Page navigation mt-3">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
