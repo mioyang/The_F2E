@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F2E-Challenge-003.Admin Order</title>
+    <!-- Linearicons -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body class="has-navpanel-fixed navpanel-fixed-left navpanel-is-top hide-navpanel">
+
+    <!-- 導覽列 -->
+    <nav class="navbar sticky-top navbar-dark bg-primary justify-content-center">
+        <a class="navbar-brand hide-sidenav-btn mr-auto" href="#">
+            <span class="lnr lnr-menu"></span>
+        </a>
+        <a class="navbar-brand" id="navbar-logo" href="index.html">
+            <img src="images/logo-w.svg" width="120" height="32">
+        </a>
+        <div class="d-flex justify-content-between ml-auto ">
+            <div class="nav-item">
+                <a href="#" class="nav-link px-2 position-relative">
+                    <span class="lnr lnr-alarm"></span>
+                    <span class="badge badge-danger position-absolute">6</span>
+                </a>
+            </div>
+            <div class="nav-item dropdown show">
+                <a class="dropdown-toggle nav-link px-2" href="#" role="button" id="dropdownMedivink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="lnr lnr-cog"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">查看網站</a>
+                    <a class="dropdown-item" href="#">變更密碼</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">登出</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 左側工具列 -->
+    <nav class="navpanel navpanel-fixed-left">
+        <div class="navpanel-container navpanel-flex navpanel-light">
+            <header class="navpanel-header text-center">
+                <a href="index.html" class="navpanel-brand">
+                    <img src="images/logo-c.svg" width="80" height="80">
+                </a>
+                <h5 class="my-1">後台管理系統</h5>
+            </header>
+            <div class="navpanel-body">
+                <ul class="list-unstyled navpanel-item">
+                    <li>
+                        <a href="setting.html" class="navpanel-link">
+                            <span class="lnr lnr-screen"></span> 基本設定
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="navpanel-link">
+                            <span class="lnr lnr-shirt"></span> 商品管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="member.html" class="navpanel-link">
+                            <span class="lnr lnr-users"></span> 會員管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order.html" class="navpanel-link">
+                            <span class="lnr lnr-cart"></span> 訂單管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="navpanel-link">
+                            <span class="lnr lnr-tag"></span> 優惠活動
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="navpanel-link">
+                            <span class="lnr lnr-pie-chart"></span> 營運分析
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Area -->
+    <section class="warp px-3 py-5">
+        <div class="container-fluid">
+            <!-- member lists -->
+            <section class="memberList">
+                <div class="row">
+                    <div class="d-flex mb-4 px-4 w-100">
+                        <div class="input-group mr-auto w-25">
+                            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." data-toggle="tooltip" data-placement="top"
+                                data-html="true" title="<em>按下 Enter 快速搜尋</em>">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button">GO!</button>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#editModal" data-title="快速下單" data-backdrop="static">
+                                <i class="fas fa-download"></i> 批次下載</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="bg-secondary">
+                                    <tr>
+                                        <th width="10">#</th>
+                                        <th width="150">會員姓名</th>
+                                        <th>Email</th>
+                                        <th aligh="center" width="120">手機認證</th>
+                                        <th aligh="center" width="120">總下單數</th>
+                                        <th aligh="center" width="120">來訪次數</th>
+                                        <th aligh="center" width="150">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>洪咪咪</td>
+                                        <td>mia@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 洪咪咪"
+                                                    data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>蘇打粉</td>
+                                        <td>soda@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>64</td>
+                                        <td>386</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 蘇打粉"
+                                                    data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>楊一一</td>
+                                        <td>one1111@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>24</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 楊一一"
+                                                    data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td>美美</td>
+                                        <td>beauty@gmail.com</td>
+                                        <td class="text-danger">未認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 美美" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td>年糕</td>
+                                        <td>turtle@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 年糕" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>6</th>
+                                        <td>胖達</td>
+                                        <td>panda@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 胖達" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>7</th>
+                                        <td>艾倫</td>
+                                        <td>alan305@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>27</td>
+                                        <td>13</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 艾倫" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>10</th>
+                                        <td>楊小儀</td>
+                                        <td>mia@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 楊小儀"
+                                                    data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>11</th>
+                                        <td>阿兩</td>
+                                        <td>money@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>34</td>
+                                        <td>36</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 阿兩" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>12</th>
+                                        <td>索隆</td>
+                                        <td>zoro@gmail.com</td>
+                                        <td>已認證</td>
+                                        <td>74</td>
+                                        <td>138</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Button group with nested dropdown">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal" data-title="編輯會員 索隆" data-backdrop="static">編輯</button>
+                                                <button type="button" class="btn btn-outline-primary">查看</button>
+
+                                                <div class="btn-group" role="group">
+                                                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ...
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                        <a class="dropdown-item" href="#">操作紀錄</a>
+                                                        <a class="dropdown-item" href="#">資料匯出</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removeModal" data-title="MOTUL 8100 X-clean+ 5W30 全合成機油"
+                                                            data-backdrop="static">加入黑名單</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <nav aria-label="Page navigation mt-3">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="bg-secondary text-center text-primary d-flex justify-content-center align-items-center mt-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col px-2 py-3">
+                    <p>[The F2E - No3.Admin Order] Designed by Mio.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    訂閱電子信
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>
