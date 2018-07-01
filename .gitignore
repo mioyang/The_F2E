@@ -12,12 +12,7 @@ The_F2E.code-workspace
 003/gulpfile.js
 003/package-lock.json
 003/package.json
-004/node_modules
-004/source
-004/public
-004/gulpfile.js
-004/package-lock.json
-004/package.json
+004/dist
 005/node_modules
 005/source
 005/public
