@@ -13,6 +13,7 @@ The_F2E.code-workspace
 003/package-lock.json
 003/package.json
 004/dist
+004/scss
 005/node_modules
 005/source
 005/public
