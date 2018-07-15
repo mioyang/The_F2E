@@ -16,12 +16,8 @@ The_F2E.code-workspace
 004/scss
 005/dist
 005/scss
-006/node_modules
-006/source
-006/public
-006/gulpfile.js
-006/package-lock.json
-006/package.json
+006/dist
+006/scss
 007/node_modules
 007/source
 007/public
