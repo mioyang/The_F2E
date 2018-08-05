@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,500,700");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.warp > #video-background, footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.warp .card {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+}
+
+.warp > #video-background {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+
+.warp .card {
+  text-align: center;
+}
+
+.skillArea {
+  visibility: hidden;
+}
+
+.skillArea .skill {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
