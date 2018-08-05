@@ -1,4 +1,5 @@
 00-original
+gulp-initial
 The_F2E.code-workspace
 002/node_modules
 002/source
@@ -23,9 +24,6 @@ The_F2E.code-workspace
 008/source
 008/dist
 008/scss
-009/node_modules
+009/dist
+009/scss
 009/source
-009/public
-009/gulpfile.js
-009/package-lock.json
-009/package.json
