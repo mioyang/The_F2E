@@ -3,12 +3,8 @@
   margin: 0;
   padding: 0;
 }
-.wrap {
-  background: url(https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-.warp > #video-background, footer {
+
+footer {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -20,12 +16,11 @@
   color: #fff;
 }
 
-.warp > #video-background {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
+.warp {
+  background: url(https://images.unsplash.com/photo-1465280190613-7f9593eb54b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1848&q=80) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .warp .card {
